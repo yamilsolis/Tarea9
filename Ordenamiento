@@ -1,0 +1,70 @@
+package tarea9;
+
+public class Ordenamiento {
+
+    public void Ascendente(int[] posiciones) {
+
+        int auxiliar;
+        boolean cambio = false;
+        
+        //Este es un ciclo infinito a ejecutarse con excepcion de que la variable cambio sea false.
+         while(true) {
+         
+             cambio = false;
+             for(int i = 1; i<posiciones.length; i++) {
+             
+                 //Si el arreglo en la posicion de i es menor a la posicion de la derecha.
+                 if(posiciones[i]<posiciones[i-1]) { //En este condicional esta el operador que determina el orden ascendente.
+
+                     auxiliar = posiciones[i]; //La variable auxiliar va a tomar el valor de i en el arreglo.
+                     posiciones[i] = posiciones[i-1]; //La variable i ahora va a tomar la posicion de la variable i-1 (posicion a la derecha).
+                     posiciones[i-1] = auxiliar; //La variable i-1 sera ahora la variable auxiliar que ya NO tendrá el valor de i.
+                     cambio = true; //Dado este cambio la variable cambio se va a volver true por lo que el ciclo se repetira hasta que no se cumplan las condiciones.
+    
+                 }
+             
+             }
+         
+             //El break se produce cuando el arreglo ya esta ordenado porque la variable cambios va a ser false.
+             if (cambio == false) {
+             
+                 break;
+             
+             }
+       
+         }
+
+    }
+  
+    public void Descendente(int[] posiciones) {
+
+        int auxiliar;
+        boolean cambio = false;
+        
+         while(true) {
+         
+             cambio = false;
+             for(int i = 1; i<posiciones.length; i++) {
+             
+                 if(posiciones[i]>posiciones[i-1])  { //En este condicional esta el operador que determina el orden descendente.
+                 
+                     auxiliar = posiciones[i];
+                     posiciones[i] = posiciones[i-1];
+                     posiciones[i-1] = auxiliar;
+                     cambio = true;
+    
+                 }
+             
+             }
+         
+             if (cambio == false) {
+             
+                 break;
+             
+             }
+       
+         }
+
+    }
+
+}
