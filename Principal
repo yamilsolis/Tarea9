@@ -1,0 +1,36 @@
+package tarea9;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Principal {
+
+    public static void main(String args[]) throws IOException {
+
+        BufferedReader numeroentrada = new BufferedReader(new InputStreamReader(System.in));
+
+        //El arreglo es de tamano 11 porque en la salida me esta generando un 0, no se de donde.
+        int numeros[] = new int[11];
+
+        for(int i = 1; i <= 10; i++) {
+
+            System.out.println("Ingresa el dato "+ i + " :" );
+            numeros[i] = Integer.parseInt(numeroentrada.readLine());
+
+        }
+
+        System.out.println("La lista de números no ordenada (tal como se ingresó) es : " + Arrays.toString(numeros));
+        
+        Ordenamiento ordenamiento = new Ordenamiento();
+        
+        ordenamiento.Ascendente(numeros);
+        System.out.println("La lista de números en orden ascendente es : " + Arrays.toString(numeros));
+
+        ordenamiento.Descendente(numeros);
+        System.out.println("La lista de números en orden descendente es : " + Arrays.toString(numeros));
+    
+    }
+
+}
